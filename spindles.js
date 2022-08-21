@@ -84,3 +84,4 @@ export const spindle3 = {
     25: 14,
     26: 4,
 };
+

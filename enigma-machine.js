@@ -1,4 +1,4 @@
-import { spindle1, spindle2, spindle3 } from "./spindles"
+// import { spindle1, spindle2, spindle3 } from './spindles';
 
 const wirePairs = {
     a: 1,
@@ -41,7 +41,7 @@ function enigmaMachine (
 ) {
     let messageArr = message.split('').map(el => wirePairs[el]);
     
-    return codedMessage.join('');
+    return messageArr;
 }
 
 console.log(enigmaMachine('hello'));
