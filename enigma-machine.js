@@ -59,9 +59,63 @@ const spindle1 = {
     26: 22,
 };
 
-// spindle2;
+const spindle2 = {
+    1: 26,
+    2: 17,
+    3: 16,
+    4: 18,
+    5: 11,
+    6: 3,
+    7: 2,
+    8: 24,
+    9: 19,
+    10: 21,
+    11: 12, 
+    12: 8, 
+    13: 6,
+    14: 20,
+    15: 9,
+    16: 7,
+    17: 4,
+    18: 14,
+    19: 23,
+    20: 1,
+    21: 25,
+    22: 5,
+    23: 13,
+    24: 10,
+    25: 22,
+    26: 15,
+};
 
-// spindle3;
+const spindle3 = {
+    1: 13,
+    2: 19,
+    3: 21,
+    4: 23,
+    5: 26,
+    6: 25,
+    7: 20,
+    8: 17,
+    9: 16,
+    10: 8,
+    11: 9, 
+    12: 6, 
+    13: 3,
+    14: 5,
+    15: 22,
+    16: 18,
+    17: 11,
+    18: 7,
+    19: 1,
+    20: 2,
+    21: 12,
+    22: 15,
+    23: 24,
+    24: 10,
+    25: 14,
+    26: 4,
+};
 
 function enigmaMachine (
     message,
@@ -74,9 +128,13 @@ function enigmaMachine (
 ) {
     let messageArr = message.split('').map(el => wirePairs[el]);
     
-    let codedMessage = messageArr.map(el => spindle1[el]); 
+    let codedMessage1 = messageArr.map(el => spindle1[el]); 
+
+    let  codedMessage2 = codedMessage1.map(el => spindle2[el]);
+
+    let codedMessage3 = codedMessage2.map(el => spindle3[el]);
     
-    return codedMessage;
+    return codedMessage3;
 }
 
-console.log(enigmaMachine('hello'));
+console.log(enigmaMachine('a'));
