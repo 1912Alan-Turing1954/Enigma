@@ -1,4 +1,4 @@
-export const spindle1 = {
+const spindle1 = {
     1: 9,
     2: 19,                        
     3: 1, 
@@ -27,7 +27,7 @@ export const spindle1 = {
     26: 22,
 };
 
-export const spindle2 = {
+const spindle2 = {
     1: 26,
     2: 17,
     3: 16,
@@ -56,7 +56,7 @@ export const spindle2 = {
     26: 15,
 };
 
-export const spindle3 = {
+const spindle3 = {
     1: 13,
     2: 19,
     3: 21,
@@ -85,3 +85,4 @@ export const spindle3 = {
     26: 4,
 };
 
+export { spindle1, spindle2, spindle3 };
