@@ -130,11 +130,20 @@ function enigmaMachine (
     let spindle3Counter = spindle3Offset;
 
     let messageArr = message.split('').map(el => wirePairs[el]);
-    
+    //This goes through each spindle and match its coresponding number and contoinues to the next spindler
     let codedMessage = messageArr.map(el => {
         let answer = spindle3[spindle2[spindle1[el + spindle1Counter] + spindle3Counter]];
 
-        spindle1Counter = (spindle1Counter + 1) % 26;
+        spindle1Counter = (spindle1Counter + 1) % 27;
+
+        //if it goes over 26 the next spindle will increase by 1;
+        if (spindle1Counter === rotatePoint1) {
+            spindle2Counter = (spindle2Counter + 1) % 27;
+        }
+
+        if (spindle2Counter === rotatePoint2) {
+            spindle3Counter = (spindle3Counter + 1) % 27;
+        }
 
         return answer;
     });
@@ -142,4 +151,4 @@ function enigmaMachine (
     return codedMessage;
 }
 
-console.log(enigmaMachine('aa'));
+console.log(enigmaMachine('hello world'));
