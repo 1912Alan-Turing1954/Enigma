@@ -30,8 +30,6 @@ const wirePairs = {
     ' ': '-',
 };
 
-
-
 const spindle1 = {
     1: 9,
     2: 19,                        
@@ -121,7 +119,6 @@ const spindle3 = {
 
 function enigmaMachine (
     message,
-    configuration,
     spindle1Offset,
     spindle2Offset,
     spindle3Offset,
