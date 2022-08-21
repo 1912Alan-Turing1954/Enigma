@@ -56,7 +56,7 @@ const alphabet = {
     23: 'x',
     24: 'y',
     25: 'z', 
-}
+};
 
 const spindleA = {
     0: 22,
@@ -171,7 +171,10 @@ function enigmaMachine (
     let spindle2Counter = spindle2Offset;
     let spindle3Counter = spindle3Offset;
 
-    let messageArr = message.split('').map(el => wirePairs[el]);
+    let messageArr = message.toLowerCase()
+    .split('')
+    .filter(el => el !== ' ' )
+    .map(el => wirePairs[el]);
     //This goes through each spindle and match its coresponding number and contoinues to the next spindler
     let codedMessage = messageArr.map(el => {
         let inputForSpindle1 = (el + spindle1Counter) % 26;
@@ -204,4 +207,6 @@ function enigmaMachine (
     return codedMessage.map(el => alphabet[el]).join('');
 }
 
-console.log(enigmaMachine('', config1, 22, 24, 0, 25, 25));
+console.log(enigmaMachine('This is a secret message encoded by a Javascript Enigma Machine', config6, 0, 0, 0, 25, 25));
+
+// ^ this will output this encoded message // teizbsrbndckrwjequueundccjfcmwrvfurirkhjqsikdqkis //
