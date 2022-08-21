@@ -1,4 +1,4 @@
-// import { spindle1, spindle2, spindle3 } from './spindles';
+// import { spindleA } from './spindles';
 
 const wirePairs = {
     a: 0,

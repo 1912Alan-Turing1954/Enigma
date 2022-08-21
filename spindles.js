@@ -85,4 +85,4 @@ const spindleC = {
     25: 14,
 };
 
-export { spindleA, spindleB, spindleC };
+// export { spindleA, spindleB, spindleC };
