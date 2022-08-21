@@ -30,7 +30,7 @@ const wirePairs = {
     ' ': '-',
 };
 
-const spindle1 = {
+const spindleA = {
     1: 9,
     2: 19,                        
     3: 1, 
@@ -59,7 +59,7 @@ const spindle1 = {
     26: 22,
 };
 
-const spindle2 = {
+const spindleB = {
     1: 26,
     2: 17,
     3: 16,
@@ -88,7 +88,7 @@ const spindle2 = {
     26: 15,
 };
 
-const spindle3 = {
+const spindleC = {
     1: 13,
     2: 19,
     3: 21,
@@ -117,14 +117,28 @@ const spindle3 = {
     26: 4,
 };
 
+//Configs
+const config1 = { 1: spindleA, 2: spindleB, 3: spindleC };
+const config2 = { 1: spindleA, 2: spindleC, 3: spindleB };
+const config3 = { 1: spindleB, 2: spindleA, 3: spindleC };
+const config4 = { 1: spindleB, 2: spindleC, 3: spindleA };
+const config5 = { 1: spindleC, 2: spindleA, 3: spindleB };
+const config6 = { 1: spindleC, 2: spindleB, 3: spindleA };
+
+
 function enigmaMachine (
     message,
+    configuration,
     spindle1Offset=0,
     spindle2Offset=0,
     spindle3Offset=0,
     rotatePoint1=26,
     rotatePoint2=26,
 ) {
+    let spindle1 = configuration[1];
+    let spindle2 = configuration[2];
+    let spindle3 = configuration[3];
+
     let spindle1Counter = spindle1Offset;
     let spindle2Counter = spindle2Offset;
     let spindle3Counter = spindle3Offset;
@@ -134,9 +148,9 @@ function enigmaMachine (
     let codedMessage = messageArr.map(el => {
         let answer = spindle3[spindle2[spindle1[el + spindle1Counter] + spindle3Counter]];
 
+    if (spindle1Counter === 25) {
         spindle1Counter = (spindle1Counter + 1) % 27;
 
-        //if it goes over 26 the next spindle will increase by 1;
         if (spindle1Counter === rotatePoint1) {
             spindle2Counter = (spindle2Counter + 1) % 27;
         }
@@ -144,11 +158,23 @@ function enigmaMachine (
         if (spindle2Counter === rotatePoint2) {
             spindle3Counter = (spindle3Counter + 1) % 27;
         }
+    } else {
+        spindle1Counter = (spindle1Counter + 1) % 27;
 
+        if (spindle1Counter === rotatePoint1) {
+            spindle2Counter = (spindle2Counter + 1) % 27;
+        }
+    }
+        
         return answer;
     });
         
     return codedMessage;
 }
 
-console.log(enigmaMachine('hello world'));
+console.log(enigmaMachine('aaa', config1, 0, 0, 0, 26, 26));
+console.log(enigmaMachine('aaa', config2, 0, 0, 0, 26, 26));
+console.log(enigmaMachine('aaa', config3, 0, 0, 0, 26, 26));
+console.log(enigmaMachine('aaa', config4, 0, 0, 0, 26, 26));
+console.log(enigmaMachine('aaa', config5, 0, 0, 0, 26, 26));
+console.log(enigmaMachine('aaa', config6, 0, 0, 0, 26, 26));
