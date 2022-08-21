@@ -145,7 +145,11 @@ function enigmaMachine (
     let messageArr = message.split('').map(el => wirePairs[el]);
     //This goes through each spindle and match its coresponding number and contoinues to the next spindler
     let codedMessage = messageArr.map(el => {
-        let answer = spindle3[(spindle2[spindle1[(el + spindle1Counter) % 26] + spindle3Counter]) % 26];
+        let inputForSpindle1 = (el + spindle1Counter) % 26;
+        let inputForSpindle2 = (spindle1[inputForSpindle1] + spindle2Counter) % 26;
+        let inputForSpindle3Almost = spindle2[inputForSpindle2 + spindle3Counter] % 26;
+        let inputForSpindle3 = inputForSpindle3Almost % 26;
+        let answer = spindle3[inputForSpindle3];
 
     if (spindle1Counter === 24) {
         spindle1Counter = (spindle1Counter + 1) % 26;
@@ -171,4 +175,4 @@ function enigmaMachine (
     return codedMessage;
 }
 
-console.log(enigmaMachine('aaa', config1, 24, 25, 0, 26, 26));
+console.log(enigmaMachine('', config1, 22, 24, 0, 25, 25));
