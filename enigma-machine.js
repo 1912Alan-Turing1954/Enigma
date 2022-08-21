@@ -119,21 +119,27 @@ const spindle3 = {
 
 function enigmaMachine (
     message,
-    spindle1Offset,
-    spindle2Offset,
-    spindle3Offset,
-    rotatePoint1,
-    rotatePoint2,
+    spindle1Offset=0,
+    spindle2Offset=0,
+    spindle3Offset=0,
+    rotatePoint1=26,
+    rotatePoint2=26,
 ) {
+    let spindle1Counter = spindle1Offset;
+    let spindle2Counter = spindle2Offset;
+    let spindle3Counter = spindle3Offset;
+
     let messageArr = message.split('').map(el => wirePairs[el]);
     
-    let codedMessage1 = messageArr.map(el => spindle1[el]); 
+    let codedMessage = messageArr.map(el => {
+        let answer = spindle3[spindle2[spindle1[el + spindle1Counter] + spindle3Counter]];
 
-    let  codedMessage2 = codedMessage1.map(el => spindle2[el]);
+        spindle1Counter = (spindle1Counter + 1) % 26;
 
-    let codedMessage3 = codedMessage2.map(el => spindle3[el]);
-    
-    return codedMessage3;
+        return answer;
+    });
+        
+    return codedMessage;
 }
 
-console.log(enigmaMachine('a'));
+console.log(enigmaMachine('aa'));
