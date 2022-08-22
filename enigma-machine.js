@@ -209,7 +209,7 @@ function enigmaMachine (
 
 console.log(enigmaMachine('This is a secret message encoded by a Javascript Enigma Machine', config1, 0, 0, 0, 25, 25));
 
-// ^ this will output this encoded message //  //
+// ^ this will output this encoded message // zpwnuisoujhmlorvptkikpkjhllndlqsmtdvmcmbznhpjcbohjbfv //
 
-
+// secret code example > This is a secret message encoded by a Javascript Enigma Machine//
 
