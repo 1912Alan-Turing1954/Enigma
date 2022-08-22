@@ -207,7 +207,7 @@ function enigmaMachine (
     return codedMessage.map(el => alphabet[el]).join('');
 }
 
-console.log(enigmaMachine('This is a secret message encoded by a Javascript Enigma Machine', config6, 0, 0, 0, 25, 25));
+console.log(enigmaMachine('This is a secret message encoded by a Javascript Enigma Machine', config1, 0, 0, 0, 25, 25));
 
 // ^ this will output this encoded message //  //
 
