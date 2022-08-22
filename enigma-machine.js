@@ -69,7 +69,7 @@ const spindleA = {
     7: 6,
     8: 25,
     9: 15,
-    10: 26,
+    10: 0,
     11: 5, 
     12: 16, 
     13: 14,
@@ -89,7 +89,7 @@ const spindleA = {
 
 const spindleB = {
     0: 15,
-    1: 26,
+    1: 0,
     2: 17,
     3: 16,
     4: 18,
@@ -122,7 +122,7 @@ const spindleC = {
     2: 19,
     3: 21,
     4: 23,
-    5: 26,
+    5: 0,
     6: 25,
     7: 20,
     8: 17,
@@ -209,4 +209,7 @@ function enigmaMachine (
 
 console.log(enigmaMachine('This is a secret message encoded by a Javascript Enigma Machine', config6, 0, 0, 0, 25, 25));
 
-// ^ this will output this encoded message // teizbsrbndckrwjequueundccjfcmwrvfurirkhjqsikdqkis //
+// ^ this will output this encoded message //  //
+
+
+
