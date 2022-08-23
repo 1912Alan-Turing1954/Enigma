@@ -209,7 +209,7 @@ function enigmaMachine (
     return codedMessage.map(el => alphabet[el]).join('');
 }
 
-console.log(enigmaMachine('peep', config1, 0, 0, 0, 25, 25));
+console.log(enigmaMachine('', config1, 0, 0, 0, 25, 25));
 
 // ^ this will output this encoded message // zpwnuisoujhmlorvptkikpkjhllndlqsmtdvmcmbznhpjcbohjbfv //
 
