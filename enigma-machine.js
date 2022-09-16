@@ -211,7 +211,7 @@ function enigmaMachine (
     return codedMessage.map(el => alphabet[el]).join('');
 }
 
-console.log(enigmaMachine('vlcgr', config1, 4, 4, 4, 25, 25));
+console.log(enigmaMachine('a', config1, 0, 0, 0, 25, 25));
 
 // ^ this will output this encoded message // zpwnuisoujhmlorvptkikpkjhllndlqsmtdvmcmbznhpjcbohjbfv //
 
