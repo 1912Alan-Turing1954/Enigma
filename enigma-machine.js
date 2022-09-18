@@ -117,7 +117,7 @@ function enigmaMachine (
         return answer;
     });
         
-    return codedMessage.map(el => alphabet[el]).join('');
+    return codedMessage.map(el => alphabet[el]).join('').toUpperCase();
 }
 
 console.log(enigmaMachine('aaaa', config1, 0, 0, 0, 25, 25));
