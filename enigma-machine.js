@@ -1,5 +1,3 @@
-import { spindleA, spindleB, spindleC } from './spindles';
-
 const wirePairs = {
     a: 0,
     b: 1,
@@ -27,6 +25,93 @@ const wirePairs = {
     x: 23,
     y: 24,
     z: 25,
+};
+
+const spindleA = {
+    0: 21,
+    1: 8,
+    2: 18,                        
+    3: 0, 
+    4: 3,
+    5: 1,
+    6: 2,
+    7: 5,
+    8: 24,
+    9: 14,
+    10: 25,
+    11: 4, 
+    12: 15, 
+    13: 13,
+    14: 10,
+    15: 9,
+    16: 22,
+    17: 6,
+    18: 11,
+    19: 12,
+    20: 16,
+    21: 19,
+    22: 17,
+    23: 23,
+    24: 7,
+    25: 20, 
+};
+
+const spindleB = {
+    0: 14,
+    1: 25,
+    2: 16,
+    3: 15,
+    4: 17,
+    5: 10,
+    6: 2,
+    7: 1,
+    8: 24,
+    9: 18,
+    10: 20,
+    11: 11, 
+    12: 7, 
+    13: 5,
+    14: 19,
+    15: 8,
+    16: 6,
+    17: 3,
+    18: 13,
+    19: 22,
+    20: 0,
+    21: 24,
+    22: 4,
+    23: 12,
+    24: 9,
+    25: 21,
+};
+
+const spindleC = {
+    0: 4,
+    1: 13,
+    2: 19,
+    3: 21,
+    4: 23,
+    5: 0,
+    6: 25,
+    7: 20,
+    8: 17,
+    9: 16,
+    10: 8,
+    11: 9, 
+    12: 6, 
+    13: 3,
+    14: 5,
+    15: 22,
+    16: 18,
+    17: 11,
+    18: 1,
+    19: 7,
+    20: 2,
+    21: 12,
+    22: 15,
+    23: 24,
+    24: 10,
+    25: 14,
 };
 
 const alphabet = {
@@ -120,7 +205,7 @@ function enigmaMachine (
     return codedMessage.map(el => alphabet[el]).join('').toUpperCase();
 }
 
-console.log(enigmaMachine('aaaa', config1, 0, 0, 0, 25, 25));
+console.log(enigmaMachine('hello', config1, 0, 0, 0, 25, 25));
 
 // ^ this will output this encoded message // zpwnuisoujhmlorvptkikpkjhllndlqsmtdvmcmbznhpjcbohjbfv //
 
